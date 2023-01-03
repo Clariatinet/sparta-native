@@ -1,20 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { Button, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import styled from '@emotion/native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style='auto' />
-    </View>
+    <StyledSafeAreaView>
+      <StyledView>
+        <StyledButton title='Javascript' />
+        <Button title='React' />
+        <Button title='Coding Test' />
+      </StyledView>
+    </StyledSafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const StyledSafeAreaView = styled.SafeAreaView`
+  padding-top: 20px;
+`;
+
+const StyledView = styled.View`
+  flex-direction: row;
+  justify-content: space-around;
+`;
+
+const StyledButton = styled.Button`
+  background-color: red;
+  color: red;
+`;
